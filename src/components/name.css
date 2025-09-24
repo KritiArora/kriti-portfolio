@@ -1,0 +1,176 @@
+.name {
+    position: relative;
+    left: 10rem;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: fadeIn 0.6s forwards ease;
+}
+
+/* Add glass effect styles */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.hover-effect {
+    transition: all 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* subtle profile ring */
+.profile-ring {
+  background: linear-gradient(135deg, rgba(74,0,224,0.6), rgba(142,45,226,0.6));
+  padding: 6px;
+  border-radius: 9999px;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4a00e0, #8e2de2, #00c6ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientMove 6s linear infinite;
+}
+
+.role-badge {
+  background: linear-gradient(90deg, rgba(74,0,224,0.16), rgba(142,45,226,0.12));
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.06);
+  max-width: 100%;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.role-text {
+  color: #e6e6ff;
+  font-weight: 600;
+}
+
+.dot-separator {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+}
+
+.tech-chip {
+  font-size: 12px;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.tech-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ensure the glass card shrinks on small screens */
+.glass-effect {
+  max-width: 100%;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 16px;
+  background: linear-gradient(90deg,#4a00e0,#8e2de2);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(74,0,224,0.18);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 10px 16px;
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ensure buttons wrap on small screens */
+@media (max-width: 640px) {
+  .btn-primary, .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+  .glass-effect {
+    padding: 16px;
+  }
+}
+
+/* improve spacing on medium screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .glass-effect {
+    padding: 20px;
+  }
+}
+
+/* make role badge scale */
+.role-badge { transform-origin: left center; }
+
+@media (max-width: 768px) {
+  .hero-name { font-size: 3rem; }
+}
